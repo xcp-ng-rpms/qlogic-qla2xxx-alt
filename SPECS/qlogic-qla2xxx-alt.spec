@@ -14,12 +14,13 @@
 
 Summary: %{vendor_name} %{driver_name} device drivers
 Name: %{vendor_label}-%{driver_name}-alt
-Version: 10.02.09.00_k
+Version: 10.02.11.00_k
 Release: 1%{?dist}
 License: GPL
 
 # Extracted from latest XS driver disk
-Source0: qlogic-qla2xxx-10.02.09.00_k.tar.gz
+Source0: qlogic-qla2xxx-10.02.11.00_k.tar.gz
+Patch0: fix-livepatching.patch
 
 BuildRequires: gcc
 BuildRequires: kernel-devel
@@ -60,5 +61,9 @@ find %{buildroot}/lib/modules/%{kernel_version} -name "*.ko" -type f | xargs chm
 /lib/modules/%{kernel_version}/*/*.ko
 
 %changelog
+* Fri May 03 2024 Gael Duperrey <gduperrey@vates.tech> - 10.02.11.00_k-1
+- Update to version 10.02.11.00_k
+- Synced from XS driver SRPM qlogic-qla2xxx-10.02.11.00_k-1.xs8~2_1.src.rpm
+
 * Thu Jun 29 2023 Gael Duperrey <gduperrey@vates.fr> - 10.02.09.00_k-1
 - initial package, version 10.02.09.00_k
