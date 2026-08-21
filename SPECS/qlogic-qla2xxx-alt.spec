@@ -15,7 +15,10 @@
 Summary: %{vendor_name} %{driver_name} device drivers
 Name: %{vendor_label}-%{driver_name}-alt
 Version: 10.02.14.01_k
-Release: 1%{?dist}
+Release: 2%{?dist}
+# Built against new kABI after cip rebase
+Requires: xcpng-kernel-kabi = 4.19.325-cip134+
+
 License: GPL
 
 # Source tarball from https://www.marvell.com/support/downloads.html
@@ -61,6 +64,9 @@ find %{buildroot}/lib/modules/%{kernel_version} -name "*.ko" -type f | xargs chm
 /lib/modules/%{kernel_version}/*/*.ko
 
 %changelog
+* Mon Aug 31 2026 Quentin Casasnovas <quentin.casasnovas@vates.tech> - 10.02.14.01_k-2
+- Rebuild for kernel v4.19.325-cip134
+
 * Thu Dec 11 2025 Thierry Escande <thierry.escande@vates.tech> - 10.02.14.01_k-1
 - Synced sources to version 10.02.14.01-k from marvell.com
 
