@@ -15,7 +15,7 @@
 Summary: %{vendor_name} %{driver_name} device drivers
 Name: %{vendor_label}-%{driver_name}-alt
 Version: 10.02.14.01_k
-Release: 2%{?dist}
+Release: 2.0.cip134.1%{?dist}
 # Built against new kABI after cip rebase
 Requires: xcpng-kernel-kabi = 4.19.325-cip134+
 
