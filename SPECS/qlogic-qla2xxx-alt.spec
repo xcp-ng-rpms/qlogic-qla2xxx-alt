@@ -15,7 +15,7 @@
 Summary: %{vendor_name} %{driver_name} device drivers
 Name: %{vendor_label}-%{driver_name}-alt
 Version: 10.02.14.01_k
-Release: 1%{?dist}
+Release: 1.0.kernelpreview.1%{?dist}
 License: GPL
 
 # Source tarball from https://www.marvell.com/support/downloads.html
@@ -23,7 +23,7 @@ Source0: qlogic-qla2xxx-10.02.14.01_k.tar.gz
 Patch0: fix-livepatching.patch
 
 BuildRequires: gcc
-BuildRequires: kernel-devel
+BuildRequires: kernel-devel >= 4.19.325-cip137.8.0.46.16
 Provides: vendor-driver
 Requires: qlogic-qla2xxx-firmware
 Requires: kernel-uname-r = %{kernel_version}
@@ -61,6 +61,9 @@ find %{buildroot}/lib/modules/%{kernel_version} -name "*.ko" -type f | xargs chm
 /lib/modules/%{kernel_version}/*/*.ko
 
 %changelog
+* Mon Nov 16 2026 Quentin Casasnovas <quentin.casasnovas@vates.tech> - 10.02.14.01_k-1.0.kernelpreview.1
+- Rebuild for kernel v4.19.325-cip137
+
 * Thu Dec 11 2025 Thierry Escande <thierry.escande@vates.tech> - 10.02.14.01_k-1
 - Synced sources to version 10.02.14.01-k from marvell.com
 
